@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta author="Vanina Nicole Muscas">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8">
+
+	<title> Home </title>
+		<!-- Import Google Icon Font: Material Icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- RALEWAY FONT -->
+  	<link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='img/favicon.png' />
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+		<!-- Automatic request to know if the user is registered -->
+		<script type="text/javascript" src="js/scripts.js"></script>
+		<!-- Import Materialize Library from CDNs -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+		<script>
+			function uploadFile() {
+  			document.getElementById("buttonConvert").style.visibility = "hidden";
+  			document.getElementById("fileDownload").style.visibility = "hidden";
+			  document.getElementById("twitterShare").style.visibility = "hidden";
+  			var formData = new FormData();
+  			formData.append('inputfile', $('#inputfile')[0].files[0]);
+
+  			$.ajax({
+  				url: 'http://192.168.56.1:8080/upload',
+  				method: 'POST',
+  				data: formData,
+  				contentType: false,
+  				processData: false,
+  				cache: false,
+  				success: function(data){
+  					Materialize.toast(data, 3000);
+  				},
+  				error: function(error){
+  					Materialize.toast(error, 5000);
+  					document.getElementById("buttonConvert").style.visibility = "visible";
+  				}
+  			});
+		}
+
+		function tweetShare(file, output) {
+			$.ajax({
+  				url: 'http://192.168.56.1:8080/twittershare',
+  				method: 'GET',
+  				data: {
+  					"filename": file,
+  					"outputformat": output
+  				},
+  				success: function(data){
+  					document.getElementById("loadingGif").style.visibility = "hidden";
+  					Materialize.toast(data, 3000);
+  				},
+  				error: function(error){
+  					document.getElementById("loadingGif").style.visibility = "hidden";
+  					document.getElementById("twitterShare").style.visibility = "visible";
+  					Materialize.toast(error, 5000);
+  				}
+  			});
+		}
+
+		function wsConnect() {
+  		if ("WebSocket" in window) {
+			var ws = new WebSocket("ws://192.168.56.1:8080/");
+
+			/* Opening WebSocket client side */
+			ws.onopen = function() {
+				document.getElementById("loadingGif").style.visibility = "visible";
+			};
+
+			/* Received message with the converted filename on server */
+			ws.onmessage = function(evt) {
+				var received_msg = evt.data;
+				if(received_msg == 'Uploaded') {
+					var msg = '{\
+						"inputformat": "' + $("#inputformat").val() + '",\
+						"inputfile": "' + $("#filename").val() + '",\
+						"outputformat": "' + $("#outputformat").val() + '"\
+					}';
+
+					ws.send(msg);
+				}
+				else if (received_msg.startsWith("Error")) {
+					document.getElementById("loadingGif").style.visibility = "hidden";
+					Materialize.toast(received_msg, 5000);
+				}
+				else {
+					/* Show buttons with get to do to the server */
+					document.getElementById("loadingGif").style.visibility = "hidden";
+					document.getElementById("fileDownload").href = "http://192.168.56.1:8080/download?filename=" + received_msg;
+					document.getElementById("fileDownload").download = received_msg;
+					document.getElementById("fileDownload").style.visibility = "visible";
+					document.getElementById("twitterShare").style.visibility = "visible";
+
+					document.getElementById("twitterShare").addEventListener('click', function(){
+						document.getElementById("loadingGif").style.visibility = "visible";
+						document.getElementById("twitterShare").style.visibility = "visible";
+						tweetShare(received_msg, $("#outputformat").val());
+					});
+				}
+			};
+
+				ws.onclose = function() {
+					document.getElementById("loadingGif").style.visibility = "hidden";
+					ws.close();
+				};
+
+				window.onbeforeunload = function(event) {
+					ws.close();
+				};
+			}
+
+			else {
+				alert("WebSocket NOT supported by your browser!");
+			}
+		}
+	</script>
+</head>
+<body>
+	<nav>
+		<div class="navbar-fixed">
+			<nav>
+				<div class="nav-wrapper blue accent-4">
+					<a href="#" class="brand-logo center">FileConverter</a>
+					<ul class="right">
+						<li class="twitter_user" id="user"></li>
+						<li><a href="login" id="login"> Login </a></li>
+						<li><a href="contact"> Contact </a></li>
+						<li><a href="logout" id="logout"style="visibility: hidden; display: none;">Logout</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</nav>
+
+	<h1 class="center"> Select file to convert: </h1>
+
+	<div class="main_container">
+		<div class="container">
+			<div class="form_container">
+
+				<div class="file-field input-field">
+					<div class="btn blue darken-4">
+						<span>File</span>
+						<input type="file" id="inputfile" name="inputfile">
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text" id="filename" name="filename">
+						<input type="hidden" name="inputformat" id="inputformat">
+					</div>
+				</div>
+
+				<div class="input-field col s12 m6" id="outputformatDiv" style="visibility: hidden;">
+					<select class="icons" name="outputformat" id="outputformat">
+						<option value="pdf" data-icon="/img/list/pdf.png" class="left circle">Documento PDF</option>
+						<option value="xls" data-icon="/img/list/excel.png" class="left circle">Foglio Elettronico Excel XLS</option>
+						<option value="doc" data-icon="/img/list/word.png" class="left circle">Documento Word DOC</option>
+						<option value="png" data-icon="/img/list/png.png" class="left circle">Immagine PNG</option>
+						<option value="jpg" data-icon="/img/list/jpg.png" class="left circle">Foto JPG</option>
+						<option value="txt" data-icon="/img/list/txt.png" class="left circle">Testo TXT</option>
+						<option value="ppt" data-icon="/img/list/ppt.png" class="left circle">Presentazione Power Point PPT</option>
+					</select>
+					<label>Convert to </label>
+				</div>
+
+				<div class="input-field col s12 m6" style="text-align: center !important; visibility: hidden;" id="buttonConvert">
+					<button class="btn waves-effect blue darken-4" onclick="wsConnect(); uploadFile();"> Convert
+						<i class="fa fa-file" aria-hidden="true"></i>
+					</button>
+				</div>
+			</div>
+
+			<div class="input-field col s12 m6" style="text-align: center !important; visibility: hidden !important;">
+				<a class="btn waves-effect blue darken-4"  id="fileDownload" name="fileDownload"> Download File
+					<i class="fa fa-download" aria-hidden="true"></i>
+				</a>
+			</div>
+			<div class="input-field col s12 m6" style="text-align: center !important; visibility: hidden !important;">
+				<a class="btn waves-effect blue darken-4" id="twitterShare" name="twitterShare"> Share on Twitter
+					<i class="fab fa-twitter"></i>
+				</a>
+			</div>
+			<div class="input-field col s12 m6" id="loadingGif" style="text-align: center !important; visibility: hidden !important;">
+				<img src="/img/loading.gif" alt="Loading..." height="50px" width="50px">
+			</div>
+			<br><br><br><br><br><br><br>
+		</div>
+	</div>
+
+	<div class="page-footer blue accent-4">
+			<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">File converter </h5>
+					<p class="grey-text text-lighten-4"> Convert any type of file! </p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text"> Find us on social network </h5>
+					<ul>
+						<li><a class="text-lighten-3 facebook-link" href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i> Facebook </a></li>
+						<li><a class="text-lighten-3 google-plus-link" href="https://plus.google.com/"><i class="fab fa-google-plus-square"></i> Google+</a></li>
+						<li><a class="text-lighten-3 twitter-link" href="https://twitter.com/"><i class="fab fa-twitter-square"></i> Twitter </a></li>
+						<li><a class="text-lighten-3 linkedin-link" href="https://it.linkedin.com/"><i class="fab fa-linkedin"></i> LinkedIn </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2019 Copyright FileConverter - <a href="https://github.com/vanicole">Vanina Nicole Muscas</a>
+			</div>
+		</div>
+	</div>
+
+    <script>
+
+		$(document).ready(function() {
+			$('select').material_select();
+
+			$("#filename").on("change", function() {
+				$("#inputformat").val($("#filename").val().split('.').pop());
+			});
+
+			$('#inputfile').on("change", function() {
+				$("#outputformatDiv, #buttonConvert").css("visibility", "");
+				document.getElementById("fileDownload").style.visibility = "hidden";
+				document.getElementById("twitterShare").style.visibility = "hidden";
+			});
+
+			$('#outputformat').on("change", function() {
+				document.getElementById("buttonConvert").style.visibility = "visible";
+				document.getElementById("fileDownload").style.visibility = "hidden";
+				document.getElementById("twitterShare").style.visibility = "hidden";
+			});
+		});
+		</script>
+	</body>
+</html>
