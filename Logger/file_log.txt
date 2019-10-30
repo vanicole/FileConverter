@@ -1,0 +1,169 @@
+[SERVER] Listening on port %d
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File compress.png uploaded correctly.
+[CLIENT CLOSED] Closed connection with client
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File compress.png uploaded correctly.
+[CONVERTION SUCCESS] Conversion from compress.png to compress.jpg
+[DOWNLOAD] Download file compress.jpg
+[TWITTER UPLOADED] compress.jpg
+[TWEET] The file compress.jpg has been converted with FileConverter. - [IMAGE] compress.jpg
+[CLIENT CLOSED] Closed connection with client
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[USERNAME] vanicole5
+[SERVER] Listening on port %d
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File Calendario accademico (1).pdf uploaded correctly.
+[CONVERTION SUCCESS] Conversion from Calendario accademico (1).pdf to Calendario accademico (1).txt
+[TWEET]The file Calendario accademico (1).txt has been converted with FileConverter.
+[CLIENT CLOSED] Closed connection with client
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[SERVER] Listening on port %d
+[SERVER] Listening on port %d
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File compress.jpg uploaded correctly.
+[CONVERTION SUCCESS] Conversion from compress.jpg to compress.png
+[TWITTER UPLOADED] compress.png
+[TWEET] The file compress.png has been converted with FileConverter. - [IMAGE] compress.png
+[CLIENT CLOSED] Closed connection with client
+[SERVER] Listening on port %d
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File Calendario accademico (1).doc uploaded correctly.
+[CONVERTION SUCCESS] Conversion from Calendario accademico (1).doc to Calendario accademico (1).pdf
+[DOWNLOAD] Download file Calendario accademico (1).pdf
+[TWEET]The file Calendario accademico (1).pdf has been converted with FileConverter.
+[CLIENT CLOSED] Closed connection with client
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[SERVER] Listening on port %d
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File Calendario accademico (1).doc uploaded correctly.
+[CONVERTION SUCCESS] Conversion from Calendario accademico (1).doc to Calendario accademico (1).pdf
+[TWEET]The file Calendario accademico (1).pdf has been converted with FileConverter.
+[CLIENT CLOSED] Closed connection with client
+[SERVER] Listening on port %d
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File Calendario accademico (1) (1).pdf uploaded correctly.
+[CONVERTION SUCCESS] Conversion from Calendario accademico (1) (1).pdf to Calendario accademico (1) (1).txt
+[DOWNLOAD] Download file Calendario accademico (1) (1).txt
+[CLIENT CLOSED] Closed connection with client
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[SERVER] Listening on port %d
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File Calendario accademico (1) (1).txt uploaded correctly.
+[CONVERTION SUCCESS] Conversion from Calendario accademico (1) (1).txt to Calendario accademico (1) (1).pdf
+[DOWNLOAD] Download file Calendario accademico (1) (1).pdf
+[TWEET]The file Calendario accademico (1) (1).pdf has been converted with FileConverter.
+[CLIENT CLOSED] Closed connection with client
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[NO AUTHORIZE] Error getting Oauth access token, authorization negated by user.
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File Bollettino 202000011357828.pdf uploaded correctly.
+[CONVERTION SUCCESS] Conversion from Bollettino 202000011357828.pdf to Bollettino 202000011357828.txt
+[ERROR TWEET NO LOGIN] Not logged in
+[CLIENT CLOSED] Closed connection with client
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[SERVER] Listening on port: 8080
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
+[SERVER] Listening on port: 8080
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File domandee.jpg uploaded correctly.
+[CONVERTION SUCCESS] Conversion from domandee.jpg to domandee.png
+[DOWNLOAD] Download file domandee.png
+[TWITTER UPLOAD ERROR] Twitter upload error
+[CLIENT CLOSED] Closed connection with client
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[UPLOAD] File domandee.jpg uploaded correctly.
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[CONVERTION SUCCESS] Conversion from domandee.jpg to domandee.png
+[TWITTER UPLOADED] domandee.png
+[TWEET] The file domandee.png has been converted with FileConverter. - [IMAGE] domandee.png
+[CLIENT CLOSED] Closed connection with client
+[SERVER] Listening on port: 8080
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File domandee.jpg uploaded correctly.
+[CONVERTION SUCCESS] Conversion from domandee.jpg to domandee.png
+[TWITTER UPLOAD ERROR] Not logged in
+[TWITTER UPLOAD ERROR] Not logged in
+[CLIENT CLOSED] Closed connection with client
+[SERVER] Listening on port: 8080
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File domandee.jpg uploaded correctly.
+[CONVERTION SUCCESS] Conversion from domandee.jpg to domandee.png
+[TWITTER UPLOAD ERROR] Not logged in
+[CLIENT CLOSED] Closed connection with client
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File domandee.jpg uploaded correctly.
+[CONVERTION SUCCESS] Conversion from domandee.jpg to domandee.png
+[TWITTER UPLOADED] domandee.png
+[TWEET] The file domandee.png has been converted with FileConverter. - [IMAGE] domandee.png
+[CLIENT CLOSED] Closed connection with client
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[USERNAME] vanicole5
+[TWITTERLOGIN] Login required, authorization must be obtained.
+[AUTHORIZE] Redirecting to Twitter authorization page.
+[LOGIN] Login done, authorization obtained
+[USERNAME] vanicole5
+[CONNECTION] Connection enstablished with ::ffff:192.168.56.1
+[UPLOAD] File domandee.jpg uploaded correctly.
+[CONVERTION SUCCESS] Conversion from domandee.jpg to domandee.pdf
+[TWEET]The file domandee.pdf has been converted with FileConverter.
+[CLIENT CLOSED] Closed connection with client
+[USERNAME] vanicole5
+[LOGOUT] Logout effettuato!
